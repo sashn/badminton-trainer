@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>dummy title</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+
+<!-- <link rel="stylesheet" type="text/css" href="dummy.css"> -->
+<style type="text/css">
+.redarrow1 {
+	background-image: url('redarrow1.png');
+	background-size: 100%;
+}
+.redarrow2 {
+	background-image: url('redarrow2.png');
+	background-size: 100%;
+}
+.redarrow3 {
+	background-image: url('redarrow3.png');
+	background-size: 100%;
+}
+.redarrow4 {
+	background-image: url('redarrow4.png');
+	background-size: 100%;
+}
+#arrow-container {
+	width: 800px;
+	height: 800px;
+	margin: -100px auto 0 auto;
+}
+
+
+</style>
+
+<script src="//code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+/* ... js goes here ... */
+$(document).ready(function() {
+
+	var timerSeconds = 1.5;
+
+
+	window.setInterval(showArrows, timerSeconds *1000);
+	// window.setInterval(changeCounter, timerSeconds *1000);
+
+	function showArrows() {
+		var choices = [
+			'redarrow1',
+			'redarrow2',
+			'redarrow3',
+			'redarrow4'
+		];
+		$('#arrow-container').removeClass().addClass(getRandomItemFromArray(choices));
+	}
+
+	// function changeCounter() {
+	// 	var choices = [
+	// 		'redarrow1',
+	// 		'redarrow2',
+	// 		'redarrow3',
+	// 		'redarrow4'
+	// 	];
+	// 	$('#arrow-container').removeClass().addClass(getRandomItemFromArray(choices));
+	// }
+
+	function getRandomItemFromArray(array) {
+		return array[Math.floor(Math.random() * array.length)];
+	}
+});
+</script>
+
+</head>
+<body>
+
+	<div id="arrow-container"></div>
+
+	<div id="counter-container"></div>
+
+</body>
+</html>
